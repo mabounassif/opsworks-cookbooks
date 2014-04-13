@@ -45,7 +45,7 @@ node['postgresql']['server']['packages'].each do |pg_pack|
 end
 
 execute "/sbin/service #{node['postgresql']['server']['service_name']} initdb" do
-  not_if { ::FileTest.exist?(File.join(node['postgresql']['dir'], "PG_VERSION")) }
+  not_if { ::FileTest.exist?(File.join("#{node['postgresql']['dir']}#{node['postgresql']['version'][0]}" ,"PG_VERSION")) }
 end
 
 service "postgresql" do
