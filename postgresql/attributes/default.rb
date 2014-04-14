@@ -72,7 +72,7 @@ when "fedora"
     default['postgresql']['version'] = "8.4"
   end
 
-  default['postgresql']['dir'] = "/var/lib/pgsql/data"
+  default['postgresql']['dir'] = "/var/lib/pgsql9/data"
   default['postgresql']['client']['packages'] = %w{postgresql-devel}
   default['postgresql']['server']['packages'] = %w{postgresql-server}
   default['postgresql']['contrib']['packages'] = %w{postgresql-contrib}
@@ -81,7 +81,7 @@ when "fedora"
 when "amazon"
 
   default['postgresql']['version'] = "8.4"
-  default['postgresql']['dir'] = "/var/lib/pgsql/data"
+  default['postgresql']['dir'] = "/var/lib/pgsql9/data"
   default['postgresql']['client']['packages'] = %w{postgresql-devel}
   default['postgresql']['server']['packages'] = %w{postgresql-server}
   default['postgresql']['contrib']['packages'] = %w{postgresql-contrib}
@@ -90,7 +90,7 @@ when "amazon"
 when "redhat", "centos", "scientific", "oracle"
 
   default['postgresql']['version'] = "8.4"
-  default['postgresql']['dir'] = "/var/lib/pgsql/data"
+  default['postgresql']['dir'] = "/var/lib/pgsql9/data"
 
   if node['platform_version'].to_f >= 6.0
     default['postgresql']['client']['packages'] = %w{postgresql-devel}
@@ -111,7 +111,7 @@ when "suse"
     default['postgresql']['version'] = "9.0"
   end
 
-  default['postgresql']['dir'] = "/var/lib/pgsql/data"
+  default['postgresql']['dir'] = "/var/lib/pgsql9/data"
   default['postgresql']['client']['packages'] = %w{postgresql-devel}
   default['postgresql']['server']['packages'] = %w{postgresql-server}
   default['postgresql']['contrib']['packages'] = %w{postgresql-contrib}
